@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" processModel="Default" domainUsage="Default" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="RecycleBin.Options.Tests/bin/Debug/RecycleBin.Options.Tests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="RecycleBin.Options.Tests/bin/Release/RecycleBin.Options.Tests.dll" />
+  </Config>
+</NUnitProject>
