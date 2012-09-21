@@ -121,20 +121,7 @@ namespace RecycleBin.Options
                       from attribute in attributes.Cast<OptionAttribute>()
                       let setField = attribute.GenerateSetValue(field)
                       select Tuple.Create(setField, attribute, field.FieldType);
-         return properties.Concat(fields).ToDictionary(tuple => tuple.Item2.Name, new KeyComparer());
-      }
-
-      private class KeyComparer : IEqualityComparer<string>
-      {
-         public bool Equals(string x, string y)
-         {
-            return String.Equals(x, y, StringComparison.InvariantCultureIgnoreCase);
-         }
-
-         public int GetHashCode(string obj)
-         {
-            return obj.ToLowerInvariant().GetHashCode();
-         }
+         return properties.Concat(fields).ToDictionary(tuple => tuple.Item2.Name, StringComparer.InvariantCultureIgnoreCase);
       }
    }
 }
