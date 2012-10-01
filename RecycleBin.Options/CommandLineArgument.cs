@@ -41,6 +41,7 @@ namespace RecycleBin.Options
          this.rest = rest;
       }
 
+      /// <inheritDoc />
       public IEnumerator<string> GetEnumerator()
       {
          return ((IEnumerable<string>)this.rest).GetEnumerator();
