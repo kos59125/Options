@@ -34,3 +34,16 @@ var argument = parser.Parse<OptionArgument>();
 int seed = argument.Option.RandomSeed;
 ```
 
+For flag option (requires Boolean value), you can use OptionFlagAttribute.
+
+```csharp
+public class OptionArgument
+{
+   [OptionFlag("?")]
+   [OptionFlag("h")]
+   [OptionFlag("help")]
+   public bool ShowHelp { get; set; }
+}
+```
+
+OptionFlagAttribute can take an argument only when the argument is combined by a separator in such form like "/help:true"; besides, it allows input with suffix of "+" (for true) or "-" (for false) like "/help+" or "/help-".
