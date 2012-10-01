@@ -67,29 +67,41 @@ namespace RecycleBin.Options
             while (enumerator.MoveNext())
             {
                var argument = enumerator.Current;
+               string value = null;
                if (argument[0] == this.optionMark)
                {
                   var optionName = argument.Substring(1);
-                  if (optionName.Any(this.valueDefinition.Contains))
+                  if (optionName.EndsWith("+") || optionName.EndsWith("-"))
+                  {
+                     value = optionName.Substring(optionName.Length - 1, 1);
+                     optionName = optionName.Substring(0, optionName.Length - 1);
+                  }
+                  else if (optionName.Any(this.valueDefinition.Contains))
                   {
                      var nameAndValue = optionName.Split(this.valueDefinition, 2);
                      optionName = nameAndValue[0];
-                     var value = nameAndValue[1];
-                     SetValue(dictionary[optionName], value, ref option);
+                     value = nameAndValue[1];
                   }
                   else
                   {
-                     if (!enumerator.MoveNext())
+                     if (dictionary[optionName].Item2.GetType() == typeof(OptionFlagAttribute))
                      {
-                        throw new InvalidOperationException("Requires option argument.");
+                        value = "true";
                      }
-                     var value = enumerator.Current;
-                     if (value[0] == this.optionMark)
+                     else
                      {
-                        throw new InvalidOperationException("Requires option argument.");
+                        if (!enumerator.MoveNext())
+                        {
+                           throw new InvalidOperationException("Requires option argument.");
+                        }
+                        value = enumerator.Current;
+                        if (value[0] == this.optionMark)
+                        {
+                           throw new InvalidOperationException("Requires option argument.");
+                        }
                      }
-                     SetValue(dictionary[optionName], value, ref option);
                   }
+                  SetValue(dictionary[optionName], value, ref option);
                }
                else
                {

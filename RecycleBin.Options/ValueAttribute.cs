@@ -64,7 +64,7 @@ namespace RecycleBin.Options
       /// <param name="value">The string value.</param>
       /// <param name="memberType">The type to convert.</param>
       /// <returns>The object value.</returns>
-      public object Parse(string value, Type memberType)
+      public virtual object Parse(string value, Type memberType)
       {
          if (value == NullString)
          {
