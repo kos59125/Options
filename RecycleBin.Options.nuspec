@@ -2,11 +2,11 @@
 <package>
    <metadata>
       <id>RecycleBin.Options</id>
-      <version>1.0.0.0</version>
+      <version>1.0.0.1</version>
       <title>RecycleBin.Options</title>
       <authors>RecycleBin</authors>
       <owners>kos59125</owners>
-      <licenseUrl>https://github.com/kos59125/Options/blob/master/LICNSE</licenseUrl>
+      <licenseUrl>https://github.com/kos59125/Options/blob/master/LICENSE</licenseUrl>
       <projectUrl>https://github.com/kos59125/Options</projectUrl>
       <requireLicenseAcceptance>true</requireLicenseAcceptance>
       <description>Provides an easy way to convert command-line arguments into an instance of user-defined class.</description>
