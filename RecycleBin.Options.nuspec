@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+   <metadata>
+      <id>RecycleBin.Options</id>
+      <version>1.0.0.0</version>
+      <title>RecycleBin.Options</title>
+      <authors>RecycleBin</authors>
+      <owners>kos59125</owners>
+      <licenseUrl>https://github.com/kos59125/Options/blob/master/LICNSE</licenseUrl>
+      <projectUrl>https://github.com/kos59125/Options</projectUrl>
+      <requireLicenseAcceptance>true</requireLicenseAcceptance>
+      <description>Provides an easy way to convert command-line arguments into an instance of user-defined class.</description>
+      <summary>Allows predefined classes to pretend to implement any interfaces.</summary>
+      <copyright>Copyright 2012 RecycleBin</copyright>
+      <references>
+         <reference file="RecycleBin.Options.dll" />
+      </references>
+      <tags>command-line command-line-argument parser</tags>
+   </metadata>
+   <files>
+      <file src="publish\*.dll" target="lib\net40" />
+      <file src="publish\*.xml" target="lib\net40" />
+   </files>
+</package>
